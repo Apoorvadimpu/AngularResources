@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <p app-basicdirective> First Basic Directive</p>
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+       <div *ngIf="onlyOdd">
+      <ul class="list-group">
+    
+        <li
+          class="list-group-item" 
+          [ngClass]="{oddnum:oddnum % 2 !== 0}"
+          [ngStyle]="{backgroundColor: oddnum % 2 !== 0 ? 'green' : 'white'}"  *ngFor="let oddnum of odd">
+        {{oddnum}}
+        </li>
+      </ul>
+    
+    </div>
+   <!--<ng-template [ngIf]="!onlyOdd">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          [ngClass]="{evennum:evennum % 2 == 0}"
+          [ngStyle]="{backgroundColor: evennum % 2 == 0 ? 'brown' : 'white'}"
+          *ngFor="let evennum of even">
+        {{evennum}}
+        </li>
+      </ul>  -->
+      <p appNoDirectDomAccess [defaultColor]="'pink'" hightlightcolor="grey  ">Not Accesing the DOM directly but passing it through element ref through the renderer</p>
+    <!-- </ng-template>  -->
+    <div *appUseunless="onlyOdd">
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          [ngClass]="{evennum:evennum % 2 !== 0}"
+          [ngStyle]="{backgroundColor: evennum % 2 !== 0 ? 'yellow' : 'red'}"
+          *ngFor="let evennum of even">
+        {{evennum}}
+        </li>
+      </ul>
+    </div>
+    <div [ngSwitch]="value">
+      <p *ngSwitchCase="5">Value is 5</p>
+      <p *ngSwitchCase="10">Value is 10</p>
+      <p *ngSwitchCase="100">Value is 100</p>
+      <p *ngSwitchDeafut>Deafault Value</p>
+    </div>
+
+    </div>
+  </div>
+</div>
