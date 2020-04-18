@@ -14,12 +14,14 @@ import { ServersService } from './servers/servers.service';
 
 
 
-const approute: Routes=[{
+const approute: Routes=[
+  { path: '', component: HomeComponent },
+  {
   path:'users', component:UserComponent,
 },
 {path:'home', component:HomeComponent},
-{path:'servers', component:ServerComponent},
-{path:'',component:HomeComponent}
+{path:'servers', component:ServerComponent}
+
 ]
 
 
@@ -34,7 +36,7 @@ const approute: Routes=[{
     ServerComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,  
     FormsModule,
     RouterModule.forRoot(approute)
   ],
