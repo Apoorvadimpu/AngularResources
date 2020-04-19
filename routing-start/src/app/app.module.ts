@@ -17,10 +17,10 @@ import { ServersService } from './servers/servers.service';
 const approute: Routes=[
   { path: '', component: HomeComponent },
   {
-  path:'users', component:UserComponent,
+  path:'users', component:UsersComponent,
 },
 {path:'home', component:HomeComponent},
-{path:'servers', component:ServerComponent}
+{path:'servers', component:ServersComponent}
 
 ]
 
@@ -31,8 +31,10 @@ const approute: Routes=[
     HomeComponent,
     UsersComponent,
     ServersComponent,
-    UserComponent,
+    UsersComponent,
     EditServerComponent,
+    ServersComponent,
+    UserComponent,
     ServerComponent
   ],
   imports: [
@@ -40,6 +42,7 @@ const approute: Routes=[
     FormsModule,
     RouterModule.forRoot(approute)
   ],
+  exports:[RouterModule],
   providers: [ServersService],
   bootstrap: [AppComponent]
 })
