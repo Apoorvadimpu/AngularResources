@@ -17,9 +17,10 @@ import { ServersService } from './servers/servers.service';
 const approute: Routes=[
   { path: '', component: HomeComponent },
   {
-  path:'users', component:UsersComponent,
-},
-{path:'home', component:HomeComponent},
+  path:'users', component:UsersComponent},
+  {
+    path: 'users/:id', component: UserComponent
+  },
 {path:'servers', component:ServersComponent}
 
 ]
