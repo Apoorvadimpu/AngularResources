@@ -1,13 +1,18 @@
-  <button class="btn btn-primary" (click)="ReloadPage()"> Reload Page</button>
+<button class="btn btn-primary" (click)="ReloadPage()"> Reload Page</button>
 <div class="row">
 
   <div class="col-xs-12 col-sm-4">
     <div class="list-group">
       <a
+      [routerLink]="['/servers',10,'edit']"
+      [queryParams]="{allowedit:1}"
+      fragment="loading"
         href="#"
         class="list-group-item"
         *ngFor="let server of servers">
         {{ server.name }}
+
+        
       </a>
     </div>
   </div>
