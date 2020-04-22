@@ -25,7 +25,7 @@ endSubscription: Subscription;
   }
 
 ngOnDestroy(){
-this.endSubscription.unsubscribe();
+this.endSubscription.unsubscribe(); 
 }
 
 }
