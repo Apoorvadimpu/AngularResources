@@ -12,27 +12,11 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { ServersService } from './servers/servers.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AppRouting } from './app-routing.module';
 
 
 
-const approute: Routes=[
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  {
-  path:'users', component:UsersComponent, children:[
-      {
-        path: ':id/:name', component: UserComponent
-      }
-  ]},
- 
-{path:'servers', component:ServersComponent , children: [
-  { path: ':id', component: ServerComponent },
-  { path: ':id/:edit', component: EditServerComponent }
-]},
-{path:'pageNotFound' , component:PageNotFoundComponent} ,
-  { path: '**', redirectTo:'pageNotFound'}
 
-]
 
 
 @NgModule({
@@ -51,7 +35,7 @@ const approute: Routes=[
   imports: [
     BrowserModule,  
     FormsModule,
-    RouterModule.forRoot(approute)
+   AppRouting
   ],
   exports:[RouterModule],
   providers: [ServersService],
