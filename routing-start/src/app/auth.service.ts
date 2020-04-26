@@ -14,7 +14,7 @@ Authenticaton(){
     const promise= new Promise((resolve,reject)=> {
         setTimeout(() => {
             resolve(this.loggedin);
-        }, 8000);
+        }, 800);
 
     });
     return promise;

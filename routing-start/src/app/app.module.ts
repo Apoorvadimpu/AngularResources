@@ -14,6 +14,9 @@ import { ServersService } from './servers/servers.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRouting } from './app-routing.module';
 import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http'; 
+import { AuthGuard } from './auth-guard.service';
+
 
 
 
@@ -36,10 +39,12 @@ import { AuthService } from './auth.service';
   imports: [
     BrowserModule,  
     FormsModule,
-   AppRouting
+   AppRouting,
+    HttpClientModule
+   
   ],
   exports:[RouterModule],
-  providers: [ServersService,AuthService],
+  providers: [ServersService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

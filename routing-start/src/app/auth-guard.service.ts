@@ -11,8 +11,8 @@ import { promise } from "protractor";
 @Injectable()
 export class AuthGuard implements CanActivate,CanActivateChild{
     constructor(private authservice: AuthService, private router: Router){}
-    canActivate(route:ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-this.authservice.Authenticaton().then(
+    canActivate(route:ActivatedRouteSnapshot,state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
+ return this.authservice.Authenticaton().then(
     (authenticated : boolean) =>
     {
         if (authenticated){
@@ -26,7 +26,7 @@ this.authservice.Authenticaton().then(
 )
     }
 
-    canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any{
+    canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
         return this .canActivate(route,state);
 
     }
