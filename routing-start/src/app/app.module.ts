@@ -16,6 +16,7 @@ import { AppRouting } from './app-routing.module';
 import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import { AuthGuard } from './auth-guard.service';
+import { CanDecativateGuard } from './servers/edit-server/can-deactivate-guard.service';
 
 
 
@@ -44,7 +45,7 @@ import { AuthGuard } from './auth-guard.service';
    
   ],
   exports:[RouterModule],
-  providers: [ServersService,AuthService,AuthGuard],
+  providers: [ServersService,AuthService,AuthGuard,CanDecativateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
