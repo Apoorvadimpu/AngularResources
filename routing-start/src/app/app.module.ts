@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth-guard.service';
 import { CanDecativateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { ResolverService } from './servers/resolver.service';
 
 
 
@@ -47,7 +48,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
    
   ],
   exports:[RouterModule],
-  providers: [ServersService,AuthService,AuthGuard,CanDecativateGuard],
+  providers: [ServersService,AuthService,AuthGuard,CanDecativateGuard,ResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

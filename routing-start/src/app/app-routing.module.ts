@@ -10,6 +10,7 @@ import { NgModule } from "@angular/core";
 import { AuthGuard } from "./auth-guard.service";
 import { CanDecativateGuard } from "./servers/edit-server/can-deactivate-guard.service";
 import { ErrorPageComponent } from "./error-page/error-page.component";
+import { ResolverService } from "./servers/resolver.service";
 
 
 
@@ -31,7 +32,7 @@ const approute: Routes = [
         canActivateChild:[AuthGuard],
         component: ServersComponent,
          children: [
-            { path: ':id', component: ServerComponent },
+            { path: ':id', component: ServerComponent , resolve:{server:ResolverService}},
             { path: ':id/:edit', component: EditServerComponent, canDeactivate:[CanDecativateGuard]}
         ]
     },
