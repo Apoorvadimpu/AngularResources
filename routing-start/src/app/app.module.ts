@@ -17,6 +17,7 @@ import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import { AuthGuard } from './auth-guard.service';
 import { CanDecativateGuard } from './servers/edit-server/can-deactivate-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -35,7 +36,8 @@ import { CanDecativateGuard } from './servers/edit-server/can-deactivate-guard.s
     ServersComponent,
     UserComponent,
     ServerComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,  

@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { NgModule } from "@angular/core";
 import { AuthGuard } from "./auth-guard.service";
 import { CanDecativateGuard } from "./servers/edit-server/can-deactivate-guard.service";
+import { ErrorPageComponent } from "./error-page/error-page.component";
 
 
 
@@ -34,7 +35,8 @@ const approute: Routes = [
             { path: ':id/:edit', component: EditServerComponent, canDeactivate:[CanDecativateGuard]}
         ]
     },
-    { path: 'pageNotFound', component: PageNotFoundComponent },
+    // { path: 'pageNotFound', component: PageNotFoundComponent },
+    { path: 'pageNotFound', component: ErrorPageComponent , data:{message:'Static Error page not found'} },
     { path: '**', redirectTo: 'pageNotFound' }
 
 ]
